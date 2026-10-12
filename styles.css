@@ -142,7 +142,6 @@ button:hover {
 .fundo-2 {
   background-image:
     linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-    url("amarelo.png");
 }
 
 /* folga para o texto não colar na borda da tela */
