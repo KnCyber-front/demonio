@@ -2,11 +2,13 @@
   --cinza: #696969;
 }
 
-body { margin: 0; 
-  background-color: #000;
+/* MUDANÇA 1: o margin: 0 estava repetido, deixei só um */
+body {
   margin: 0;
+  background-color: #000;
   color: #fff;
 }
+
 
 button {
   background-color: #000;
@@ -20,6 +22,16 @@ button {
 }
 button:hover {
   background-color: #696969;
+}
+
+
+
+.fundo-2 h1 {
+  font-size: 4rem;
+}
+
+.fundo-2 h2 {
+  font-size: 2rem;
 }
 
 
@@ -85,7 +97,7 @@ button:hover {
 
 /* Subtítulo Amarelo/Dourado */
 .card-conteudo .subtitulo {
-  color: #ffcc00;
+  color: #d6b810;
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -133,21 +145,235 @@ button:hover {
   color: #fff;
 }
 
+/* MUDANÇA 3: acrescentei a primeira linha do background-image.
+   Ela escurece o rodapé do hero até virar preto. */
 .hero-banner {
   background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0) 60%, #000 100%),
     linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
     url("barba.png");
 }
 
+/* MUDANÇA 4: o amarelo chapado virou um degradê que começa preto.
+   Para terminar no seu amarelo original, troque #8f7410 por #d6b810. */
 .fundo-2 {
-  background-image:
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+  background: linear-gradient(to bottom, #000 0%, #2b2306 35%, #d6b810 100%);
+  
 }
 
-/* folga para o texto não colar na borda da tela */
 .hero-banner .container,
 .fundo-2 .container {
   padding: 2rem;
 }
 
 .banner-title { font-size: 4rem; }
+
+
+
+.assinatura .container {
+  box-sizing: border-box;
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.assinatura .container > div:first-child {
+  grid-column: 1 / -1;
+}
+
+.assinatura h5 {
+  color: #d6b810;
+  font-size: .9rem;
+  letter-spacing: 2px;
+  margin: 0 0 .75rem;
+}
+
+.assinatura h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.05;
+  margin: 0 0 1rem;
+}
+
+.assinatura .container > div:first-child > p {
+  color: #a0a0a0;
+  font-size: 1.1rem;
+  max-width: 55ch;
+}
+
+.assinatura .container > div:first-child > i {
+  color: #d6b810;
+  margin-right: .4rem;
+}
+
+.assinatura .container > div:first-child > button {
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  margin: 0 1.25rem .75rem 0;
+  cursor: default;
+}
+
+.assinatura .container > div:first-child > button:hover {
+  background: #1e1e1e;
+}
+
+.assinatura .caixa-plano {
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-top: 4px solid #d6b810;
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+
+.assinatura .caixa-plano h2 {
+  margin: 0 0 .25rem;
+  font-size: 2rem;
+}
+
+.assinatura .caixa-plano p {
+  color: #a0a0a0;
+  margin: 0 0 .5rem;
+}
+
+.assinatura .caixa-plano p:first-of-type {
+  color: #d6b810;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: .85rem;
+}
+
+.linha-preco {
+  display: flex;
+  justify-content: space-between;
+  padding: .8rem 0;
+  border-bottom: 1px dashed #333;
+}
+
+.linha-preco span:last-child { font-weight: 700; }
+
+.botao-assinar {
+  width: 100%;
+  margin-top: 1.25rem;
+  background: #d6b810;
+  color: #000;
+  font-weight: 700;
+}
+
+.botao-assinar:hover { background: #fff; }
+
+.assinatura + p {
+  text-align: center;
+  color: #a0a0a0;
+  padding: 0 2rem 2rem;
+}
+
+@media (max-width: 700px) {
+  .assinatura .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cards {
+  box-sizing: border-box;
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.cards .card-experiencia {
+  width: 100%;
+}
+
+.precos .container {
+  box-sizing: border-box;
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+}
+
+.precos .subtitulo {
+  display: block;
+  color: #d6b810;
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: .75rem;
+}
+
+.precos h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 0 0 .75rem;
+}
+
+.precos p {
+  color: #a0a0a0;
+  font-size: 1.1rem;
+  max-width: 55ch;
+  margin: 0 auto 1rem;
+}
+
+/* Os três cards lado a lado */
+.container-precos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.card-preco {
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  transition: transform .2s, border-color .2s;
+}
+
+.card-preco:hover {
+  transform: translateY(-6px);
+  border-color: #d6b810;
+}
+
+.icone-circulo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: #d6b810;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.card-preco h3 {
+  margin: 0 0 .5rem;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.valor {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #d6b810;
+}
+
+/* Rodapé (está dentro da seção, por isso zero o padding repetido) */
+.main-footer {
+  border-top: 1px solid #2a2a2a;
+  margin-top: 4rem;
+  padding: 2rem 0;
+  color: #a0a0a0;
+  font-size: .9rem;
+}
+
+.main-footer p { margin: 0 auto; }
+
+.precos .main-footer .container { padding: 0; }
